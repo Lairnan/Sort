@@ -1,21 +1,20 @@
 package org.algoritms.sorts;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class BubbleSort {
-    public static List<Integer> bubbleSort(Integer[] array) {
-        int length = array.length;
+    public static List<Integer> bubbleSort(List<Integer> array) {
+        int length = array.size();
         for(int i = 0; i < length; i++) {
             for(int j = 0; j < length - 1; j++) {
-                if(array[j] > array[j + 1]) {
-                    array[j] = array[j] + array[j + 1];
-                    array[j + 1] = array[j] - array[j + 1];
-                    array[j] = array[j] - array[j + 1];
+                if(array.get(j) > array.get(j + 1)) {
+                    array.set(j, array.get(j) + array.get(j + 1));
+                    array.set(j + 1, array.get(j) - array.get(j + 1));
+                    array.set(j, array.get(j) - array.get(j + 1));
                 }
             }
         }
 
-        return Arrays.stream(array).toList();
+        return array;
     }
 }
