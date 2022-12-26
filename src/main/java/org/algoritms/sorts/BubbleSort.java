@@ -1,5 +1,6 @@
 package org.algoritms.sorts;
 
+import org.algoritms.Main;
 import java.util.List;
 
 public class BubbleSort {
@@ -7,11 +8,7 @@ public class BubbleSort {
         int length = array.size();
         for(int i = 0; i < length; i++) {
             for(int j = 0; j < length - 1; j++) {
-                if(array.get(j) > array.get(j + 1)) {
-                    array.set(j, array.get(j) + array.get(j + 1));
-                    array.set(j + 1, array.get(j) - array.get(j + 1));
-                    array.set(j, array.get(j) - array.get(j + 1));
-                }
+                Main.changePosition(array, j);
             }
         }
 
